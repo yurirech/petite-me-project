@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import './variables';
+@import './mixins';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: $color-petite-background;
+  color: $color-petite-black;
+  font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant', serif;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2 {
+  font-size: 4.6rem;
+}
+
+h3 {
+  font-size: 3.8rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+h5 {
+  font-size: 2.4rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+a {
+  color: inherit;
+  // text-decoration: none;
+  font-weight: 600;
+}
+
+small {
+  font-size: 90%;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+@include laptopS {
+  
+  h1 {
+    font-size: 6.4rem;
+  }
+  
+  h2 {
+    font-size: 5.6rem;
+  }
+  
+  h3 {
+    font-size: 4.8rem;
+  }
+  
+  h4 {
+    font-size: 4rem;
+  }
+  
+  h5 {
+    font-size: 3.2rem;
+  }
+  
+  h6 {
+    font-size: 2.8rem;
+  }
+}

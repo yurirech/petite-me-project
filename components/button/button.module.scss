@@ -1,0 +1,50 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.button {
+  background-color: $color-petite-beige;
+  color: #ffffff;
+  letter-spacing: .12rem;
+  border-radius: .4rem;
+  font-family: 'Poppins', sans-serif;
+  padding: 1.25rem 2.5rem;
+  filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.3));
+  border: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    
+  }
+
+  &:active {
+    filter: none;
+  }
+}
+
+.buttonLight {
+  background-color: $color-petite-light-beige;
+}
+
+.buttonDark {
+  background-color: $color-petite-dark-beige;
+}
+
+.buttonBlack {
+  background-color: $color-petite-black;
+}
+
+.buttonWhite {
+  color: $color-petite-black;
+  background-color: $color-petite-background;
+}
+
+@include laptopS {
+  .button {
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(221, 219, 219, 0.527);
+    }
+  }
+}

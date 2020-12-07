@@ -1,0 +1,20 @@
+@import './variables';
+
+.container {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2.5rem;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color:#0000001a;
+  position: absolute;
+  z-index: -1;
+}
+
+.blackIcon {
+  fill: $color-petite-black;
+}

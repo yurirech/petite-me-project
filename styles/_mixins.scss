@@ -1,0 +1,65 @@
+$mobile: 480px;
+$tablet: 768px;
+$laptopS: 1024px;
+$laptop: 1200px;
+
+// Breakpoints mixin
+
+@mixin laptop {
+  @media (min-width: $laptop ) {
+    @content;
+  }
+}
+
+@mixin laptopS {
+  @media (min-width: $laptopS ) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet ) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: $mobile ) {
+    @content;
+  }
+}
+
+// Other mixins
+
+@mixin lineHeightP {
+  line-height: 3.5rem;
+}
+
+@mixin autoMargins {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin moreLetterSpacing {
+  letter-spacing: 1.2px;
+}
+
+@mixin lessLetterSpacing {
+  letter-spacing: -1.4px;
+}
+
+@mixin hideOnDesktop {
+  display: block;
+
+  @include laptopS {
+    display: none;
+  }
+}
+
+@mixin hideOnMobile {
+  display: none;
+
+  @include laptopS {
+    display: block;
+  }
+}
