@@ -10,7 +10,6 @@ import FavoriteIcon from '../../public/icon/favorite-border.svg';
 import SearchIcon from '../../public/icon/search.svg';
 import CartIcon from '../../public/icon/shopping-cart.svg';
 
-import classNames from 'classnames';
 
 import Input from '../input/input';
 
@@ -18,9 +17,6 @@ import Input from '../input/input';
 const MenuBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  // const toggleAnimation = classNames({
-  //   [styles.toggleAnimation]: toggleMenu
-  // });
 
   return (
     <>
