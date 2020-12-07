@@ -1,0 +1,263 @@
+@import "./variables";
+@import "./mixins";
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: relative;
+	height: 85vh;
+	z-index: 0;
+	text-align: center;
+
+	h1 {
+		margin-bottom: 1.5rem;
+		color: #ffffff;
+		filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.15));
+		font-size: 5rem;
+	}
+
+	.imageHolder {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: -2;
+	}
+
+	.button {
+		margin-bottom: 5.9rem;
+		max-width: 65%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.desktopHero {
+		@include hideOnMobile;
+	}
+
+	.title {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.infoDisplay {
+	background-color: $color-petite-light-green;
+	text-align: center;
+	font-weight: 600;
+	padding: 1rem;
+	@include hideOnDesktop;
+	@include moreLetterSpacing;
+}
+
+.infoDisplayDesktop {
+	margin-bottom: 4rem;
+
+	@include hideOnMobile;
+}
+
+.whoAreWe {
+	text-align: center;
+	margin-top: 3.5rem;
+	margin-bottom: 3.5rem;
+
+	h1 {
+		margin-bottom: 3.5rem;
+	}
+
+	p {
+		@include lineHeightP;
+		@include moreLetterSpacing;
+	}
+
+	.whoAreWeImages {
+		@include hideOnMobile;
+	}
+}
+
+.instagram {
+	background-color: $color-petite-beige;
+	position: relative;
+	z-index: 0;
+	text-align: center;
+	padding: 4rem 0;
+
+	h1 {
+		color: white;
+		line-height: 4.95rem;
+		margin-bottom: 5rem;
+
+		@include lessLetterSpacing;
+		@include hideOnDesktop;
+	}
+
+	.imageHolder {
+		width: 100%;
+		max-width: 50rem;
+		margin-bottom: 2rem;
+
+		@include autoMargins;
+	}
+
+	.button {
+		max-width: 50rem;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 3rem;
+
+		span {
+			@include hideOnMobile;
+		}
+	}
+}
+
+@include laptopS {
+	.hero {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		max-width: 1190px;
+		margin: auto;
+		height: 100%;
+
+		.imageHolder {
+			position: relative;
+		}
+
+		.desktopHero {
+			position: relative;
+			z-index: -2;
+
+			.gridContainer {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+				// height: 100%;
+
+				grid-template-areas:
+					"clothing1 model"
+					"clothing2 model";
+
+				.imageHolder1 {
+					grid-area: clothing1;
+				}
+
+				.imageHolder2 {
+					grid-area: clothing2;
+					position: relative;
+				}
+
+				.imageHolder3 {
+					grid-area: model;
+					position: relative;
+				}
+			}
+		}
+
+		.title {
+			position: absolute;
+			width: 50%;
+			bottom: 0;
+			z-index: 0;
+		}
+	}
+
+	.whoAreWe {
+		max-height: 100vh;
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto repeat(3, 1fr);
+		grid-gap: 1.75rem;
+		grid-template-areas:
+			"blank blank header header"
+			"bigImg bigImg text text"
+			"bigImg bigImg smallImg smallImg2"
+			"bigImg bigImg smallImg smallImg2"
+			"bigImg bigImg smallImg smallImg2"
+			"bigImg bigImg smallImg smallImg2";
+
+		margin-top: 8rem;
+		margin-bottom: 8rem;
+
+		h1 {
+			grid-area: header;
+			margin-bottom: 0;
+		}
+
+		p {
+			grid-area: text;
+			text-align: left;
+			margin: 0;
+			align-self: center;
+		}
+
+		.whoAreWeImages {
+			position: relative;
+			// max-height: 45rem;
+		}
+
+		.whoAreWeImage1 {
+			grid-area: bigImg;
+		}
+
+		.whoAreWeImage2 {
+			grid-area: smallImg;
+		}
+
+		.whoAreWeImage3 {
+			grid-area: smallImg2;
+		}
+	}
+
+	.instagram {
+		padding-top: 10rem;
+		padding-bottom: 10rem;
+
+		> div {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: space-between;
+
+			.imageHolder {
+				max-width: 40rem;
+				margin: 0 auto;
+			}
+
+			.button {
+				max-width: unset;
+				margin: unset;
+				width: 50%;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+
+				a {
+					width: 35%;
+				}
+
+				span {
+
+					p {
+						color: $color-petite-white;
+						font-size: 4rem;
+						font-weight: 600;
+						margin: 2.4rem 0;
+					}
+
+					svg {
+						
+						path:first-of-type {
+							fill: transparent;
+						}
+						
+						* {
+							fill: $color-petite-white;
+						}
+					}
+				}
+			}
+		}
+	}
+}

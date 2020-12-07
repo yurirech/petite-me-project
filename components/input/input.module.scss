@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.inputGroup {
+  position: relative;
+  
+  input::-webkit-input-placeholder {
+    color: $color-petite-black;
+    font-family: 'Poppins';
+    letter-spacing: 1.2px;
+  }
+  
+  input:focus::-webkit-input-placeholder {
+    color: $color-petite-grey;
+  }
+
+  input {
+    background-color: unset;
+    border: 0;
+    border-bottom: 2px solid $color-petite-black;
+    padding-bottom: .75rem;
+    padding-right: 2.5rem;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  svg {
+    position: absolute;
+    right: 0;
+  }
+}

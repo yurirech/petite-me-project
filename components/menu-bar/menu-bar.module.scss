@@ -1,0 +1,120 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+@keyframes animate {
+  0% {  max-height: 0 }
+  // 25% { opacity: .5; }
+  100% { max-height: 42.9rem; }
+}
+
+@keyframes animateText {
+  0% {  opacity: 0; }
+  // 25% { opacity: .5; }
+  100% { opacity: 1; }
+}
+
+
+
+.menu {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 5vh;
+  position: relative;
+  padding: .75rem 0;
+
+  form, .menuIcons {
+    width: 15rem;
+    @include hideOnMobile;
+  }
+
+  form {
+   margin-right: auto;
+  }
+
+  .menuIcons {
+    margin-left: auto;
+    text-align: end;
+    padding-top: 1.25rem;
+
+    svg {
+      margin-left: 1.5rem;
+    }
+
+  }
+ 
+  .icon {
+    fill: $color-petite-black;
+    margin-left: auto;
+    z-index: 1;
+
+    @include hideOnDesktop;
+  }
+
+  .buttonToggle {
+    background-color: $color-petite-light-green;
+    width: 4rem;
+    height: 5.5rem;
+    position: absolute;
+    right: -5px;
+    bottom: -1.75rem;
+    z-index: 0;
+    border-top-right-radius: .75rem;
+    border-top-left-radius: .75rem;
+    // transition: animate 1s ease-out;
+  }
+}
+
+.menuLinks {
+  text-align: center;
+  padding: 1.5rem 0;
+
+  &:after {
+    width: 100%;
+    position: absolute;
+    content: "";
+    height: 1px;
+    background: $color-petite-light-green;
+    top: 6.55rem;
+    left: 0;
+  }
+
+  @include hideOnMobile;
+
+  a {
+    margin: 0 1.5rem;
+  }
+}
+
+// .toggleAnimation {
+//   transition: animateOut .5s linear;
+//   transition: 1s;
+//   background-color: $color-petite-black;
+// }
+
+.menuPanel {
+  width: 100%;
+  padding: 1rem 2.5rem;
+  background-color: $color-petite-light-green;
+  position: absolute;
+  z-index: 1;
+  animation: animate 1.75s linear;
+
+  h4 {
+    margin-top: 1rem;
+    letter-spacing: .2rem;
+    animation: animateText 3s ease-out;
+
+    &:last-of-type {
+      margin-top: 2.5rem
+    }
+  }
+
+  a {
+    animation: animateText 2.5s ease-out;
+    display: block;
+    margin: 1rem 0;
+  }
+}
