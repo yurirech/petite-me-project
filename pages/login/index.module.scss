@@ -1,0 +1,36 @@
+@import "../../styles/variables";
+@import "../../styles/_mixins.scss";
+
+.login {
+	position: relative;
+
+	.divider {
+		height: 1px;
+		background-color: $color-petite-light-green;
+		width: 100%;
+		position: absolute;
+		top: 4.35rem;
+	}
+
+	.loginHeader {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		margin-bottom: 2rem;
+
+		P {
+			min-height: 4.3rem;
+			width: 50%;
+			margin: 0;
+      padding: 1rem 0 0.55rem;
+      color: $color-petite-light-green;
+      @include moreLetterSpacing;
+      transition: .3s ease-in;
+		}
+
+		p.isActive {
+      border-bottom: 2px solid $color-petite-black;
+      color: $color-petite-black;
+		}
+	}
+}

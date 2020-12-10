@@ -22,19 +22,19 @@
   }
 }
 
-.buttonLight {
+.button.light {
   background-color: $color-petite-light-beige;
 }
 
-.buttonDark {
+.button.dark {
   background-color: $color-petite-dark-beige;
 }
 
-.buttonBlack {
+.button.black {
   background-color: $color-petite-black;
 }
 
-.buttonWhite {
+.button.white {
   color: $color-petite-black;
   background-color: $color-petite-background;
 }

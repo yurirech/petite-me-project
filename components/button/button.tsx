@@ -4,20 +4,15 @@ import classNames from 'classnames';
 
 interface Button {
   title: string,
-  backgroundColor?: string
+  backgroundColor?: string,
+  type?: any
 }
 
-const Button = ({title, backgroundColor }: Button) => {
-  const buttonColor = classNames({
-    [styles.buttonLight]: backgroundColor === 'light',
-    [styles.buttonDark]: backgroundColor === 'dark',
-    [styles.buttonBlack]: backgroundColor === 'black',
-    [styles.buttonWhite]: backgroundColor === 'white',
-  })
+const Button = ({title, type, backgroundColor }: Button) => {
 
   return (
     <>
-      <button className={`${styles.button} ${buttonColor}`}>{title}</button>
+      <button type={type} className={`${styles.button} ${styles[backgroundColor]}`}>{title}</button>
     </>
   );
 }
