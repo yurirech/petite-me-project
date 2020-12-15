@@ -42,7 +42,7 @@
 }
 
 .infoDisplay {
-	background-color: $color-petite-light-green;
+	background-color: var(--color-petite-light-green);
 	text-align: center;
 	font-weight: 600;
 	padding: 1rem;
@@ -76,7 +76,7 @@
 }
 
 .instagram {
-	background-color: $color-petite-beige;
+	background-color: var(--color-petite-beige);
 	position: relative;
 	z-index: 0;
 	text-align: center;
@@ -240,7 +240,7 @@
 				span {
 
 					p {
-						color: $color-petite-white;
+						color: var(--color-petite-white);
 						font-size: 4rem;
 						font-weight: 600;
 						margin: 2.4rem 0;
@@ -253,7 +253,7 @@
 						}
 						
 						* {
-							fill: $color-petite-white;
+							fill: var(--color-petite-white);
 						}
 					}
 				}

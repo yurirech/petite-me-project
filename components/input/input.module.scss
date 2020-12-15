@@ -1,22 +1,24 @@
 @import '../../styles/variables';
+@import "../../styles/_mixins.scss";
 
 .inputGroup {
   position: relative;
+  display: flex;
   
   input::-webkit-input-placeholder {
-    color: $color-petite-black;
+    color: var(--color-petite-black);
     font-family: 'Poppins';
     letter-spacing: 1.2px;
   }
   
   input:focus::-webkit-input-placeholder {
-    color: $color-petite-grey;
+    color: var(--color-petite-grey);
   }
 
   input {
     background-color: unset;
     border: 0;
-    border-bottom: 2px solid $color-petite-black;
+    border-bottom: 2px solid var(--color-petite-black);
     padding-bottom: .75rem;
     padding-right: 2.5rem;
     width: 100%;
@@ -29,5 +31,11 @@
   svg {
     position: absolute;
     right: 0;
+  }
+}
+
+@include laptopS {
+  .inputGroup {
+    align-items: center;
   }
 }

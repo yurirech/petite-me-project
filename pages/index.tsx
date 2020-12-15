@@ -3,7 +3,7 @@ import Image from "next/image";
 import Button from "../components/button/button";
 import Footer from "../components/footer/footer";
 import MenuBar from "../components/menu-bar/menu-bar";
-import Instagram from '../public/icon/instagram-negative.svg';
+import Instagram from "../public/icon/instagram-negative.svg";
 import styles from "../styles/home.module.scss";
 import uStyles from "../styles/utils.module.scss";
 
@@ -16,7 +16,6 @@ export default function Home() {
 			</Head>
 
 			<main>
-				<MenuBar />
 				<section
 					className={`${styles.infoDisplay} ${styles.infoDisplayDesktop}`}
 				>
@@ -106,7 +105,7 @@ export default function Home() {
 									src="/img/who-are-we3.jpg"
 									layout="fill"
 									objectFit="cover"
-									objectPosition='0 30%'
+									objectPosition="0 30%"
 								/>
 							</div>
 						</div>
@@ -136,9 +135,6 @@ export default function Home() {
 					</div>
 				</section>
 			</main>
-			<footer>
-				<Footer />
-			</footer>
 		</div>
 	);
 }

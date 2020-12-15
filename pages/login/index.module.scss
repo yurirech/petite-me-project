@@ -1,0 +1,161 @@
+@import "../../styles/variables";
+@import "../../styles/_mixins.scss";
+@import "../../styles/animations";
+
+// @keyframes expandWidth {
+//   0% { width: 0;}
+//   100% { width: 100%;}
+// }
+
+.login {
+	position: relative;
+	margin-bottom: 3rem;
+	margin-top: 3rem;
+
+	.divider {
+		height: 1px;
+		background-color: var(--color-petite-light-green);
+		width: 100%;
+		position: absolute;
+		top: 3.95rem;
+	}
+
+	.imageWrapper {
+		@include hideOnMobile;
+	}
+
+	.loginHeader {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		margin-bottom: 2rem;
+
+		P {
+			width: 50%;
+			margin: 0;
+			padding: 1rem 0 0.55rem;
+			color: var(--color-petite-light-green);
+			position: relative;
+			transition: 0.3s;
+			@include moreLetterSpacing;
+
+			&::after {
+				content: "";
+				width: 100%;
+				height: 2px;
+				position: absolute;
+				background-color: #24201d;
+				bottom: 0;
+				left: 0;
+				display: none;
+			}
+		}
+
+		p.isActive {
+			color: var(--color-petite-black);
+
+			&::after {
+				display: block;
+				animation: expandWidth 0.7s ease-in;
+			}
+		}
+	}
+
+	form {
+		min-height: 25rem;
+		margin-top: 5rem;
+
+		> div:first-child,
+		> div:nth-child(2) {
+			margin: 3rem 0 4rem;
+		}
+
+		.furtherActions {
+			display: flex;
+			margin-bottom: 5rem;
+
+			a {
+				font-size: 80%;
+			}
+
+			.rememberMe {
+				margin-left: auto;
+
+				input {
+					width: unset;
+					margin-right: 0.5rem;
+				}
+
+				label {
+					font-size: 80%;
+				}
+			}
+		}
+
+		.register {
+			text-align: center;
+
+			p {
+				margin: 1.5rem 3rem 3rem;
+				font-size: 80%;
+
+				a {
+					font-size: 90%;
+				}
+			}
+
+			> div {
+				margin-bottom: 3rem;
+			}
+		}
+	}
+}
+
+@include laptopS {
+	.login {
+		margin-top: 6rem;
+
+		.divider {
+			width: 40%;
+			right: 12%;
+			top: 4.35rem;
+		}
+
+		.loginHeader p {
+			width: 30%;
+			cursor: pointer;
+			font-size: 1.9rem;
+		}
+
+		.flexContainer {
+			height: 50vw;
+			max-height: 60rem;
+			display: flex;
+			justify-content: center;
+
+			.leftBlock,
+			.rightBlock {
+				width: calc(100% / 2);
+			}
+
+			.leftBlock {
+				.imageWrapper {
+					position: relative;
+					height: 100%;
+				}
+			}
+		}
+
+		form {
+			width: 65%;
+			margin: 14% auto 2rem;
+
+			.furtherActions {
+				a,
+				.rememberMe label {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+}

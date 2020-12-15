@@ -21,9 +21,13 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 5vh;
+  min-height: 6rem;
   position: relative;
   padding: .75rem 0;
+
+  h4 {
+    cursor: pointer;
+  }
 
   form, .menuIcons {
     width: 15rem;
@@ -46,7 +50,7 @@
   }
  
   .icon {
-    fill: $color-petite-black;
+    fill: var(--color-petite-black);
     margin-left: auto;
     z-index: 1;
 
@@ -54,7 +58,7 @@
   }
 
   .buttonToggle {
-    background-color: $color-petite-light-green;
+    background-color: var(--color-petite-light-green);
     width: 4rem;
     height: 5.5rem;
     position: absolute;
@@ -76,7 +80,17 @@
     position: absolute;
     content: "";
     height: 1px;
-    background: $color-petite-light-green;
+    background: var(--color-petite-light-green);
+    top: 11.65rem;
+    left: 0;
+  }
+
+  &:before {
+    width: 100%;
+    position: absolute;
+    content: "";
+    height: 1px;
+    background: var(--color-petite-light-green);
     top: 6.55rem;
     left: 0;
   }
@@ -91,13 +105,13 @@
 // .toggleAnimation {
 //   transition: animateOut .5s linear;
 //   transition: 1s;
-//   background-color: $color-petite-black;
+//   background-color: var(--color-petite-black);
 // }
 
 .menuPanel {
   width: 100%;
   padding: 1rem 2.5rem;
-  background-color: $color-petite-light-green;
+  background-color: var(--color-petite-light-green);
   position: absolute;
   z-index: 1;
   animation: animate 1.75s linear;
@@ -106,6 +120,7 @@
     margin-top: 1rem;
     letter-spacing: .2rem;
     animation: animateText 3s ease-out;
+    
 
     &:last-of-type {
       margin-top: 2.5rem

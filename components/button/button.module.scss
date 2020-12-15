@@ -2,7 +2,7 @@
 @import '../../styles/variables';
 
 .button {
-  background-color: $color-petite-beige;
+  background-color: var(--color-petite-beige);
   color: #ffffff;
   letter-spacing: .12rem;
   border-radius: .4rem;
@@ -22,21 +22,21 @@
   }
 }
 
-.buttonLight {
-  background-color: $color-petite-light-beige;
+.button.light {
+  background-color: var(--color-petite-light-beige);
 }
 
-.buttonDark {
-  background-color: $color-petite-dark-beige;
+.button.dark {
+  background-color: var(--color-petite-dark-beige);
 }
 
-.buttonBlack {
-  background-color: $color-petite-black;
+.button.black {
+  background-color: var(--color-petite-black);
 }
 
-.buttonWhite {
-  color: $color-petite-black;
-  background-color: $color-petite-background;
+.button.white {
+  color: var(--color-petite-black);
+  background-color: var(--color-petite-background);
 }
 
 @include laptopS {
@@ -44,7 +44,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(221, 219, 219, 0.527);
+      opacity: .85;
     }
   }
 }
