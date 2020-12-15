@@ -21,9 +21,13 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  min-height: 5vh;
+  min-height: 6rem;
   position: relative;
   padding: .75rem 0;
+
+  h4 {
+    cursor: pointer;
+  }
 
   form, .menuIcons {
     width: 15rem;
@@ -77,6 +81,16 @@
     content: "";
     height: 1px;
     background: $color-petite-light-green;
+    top: 11.65rem;
+    left: 0;
+  }
+
+  &:before {
+    width: 100%;
+    position: absolute;
+    content: "";
+    height: 1px;
+    background: $color-petite-light-green;
     top: 6.55rem;
     left: 0;
   }
@@ -106,6 +120,7 @@
     margin-top: 1rem;
     letter-spacing: .2rem;
     animation: animateText 3s ease-out;
+    
 
     &:last-of-type {
       margin-top: 2.5rem

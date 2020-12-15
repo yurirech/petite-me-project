@@ -1,7 +1,9 @@
 @import '../../styles/variables';
+@import "../../styles/_mixins.scss";
 
 .inputGroup {
   position: relative;
+  display: flex;
   
   input::-webkit-input-placeholder {
     color: $color-petite-black;
@@ -29,5 +31,11 @@
   svg {
     position: absolute;
     right: 0;
+  }
+}
+
+@include laptopS {
+  .inputGroup {
+    align-items: center;
   }
 }
