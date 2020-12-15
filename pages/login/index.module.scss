@@ -14,7 +14,7 @@
 
 	.divider {
 		height: 1px;
-		background-color: $color-petite-light-green;
+		background-color: var(--color-petite-light-green);
 		width: 100%;
 		position: absolute;
 		top: 3.95rem;
@@ -34,7 +34,7 @@
 			width: 50%;
 			margin: 0;
 			padding: 1rem 0 0.55rem;
-			color: $color-petite-light-green;
+			color: var(--color-petite-light-green);
 			position: relative;
 			transition: 0.3s;
 			@include moreLetterSpacing;
@@ -52,7 +52,7 @@
 		}
 
 		p.isActive {
-			color: $color-petite-black;
+			color: var(--color-petite-black);
 
 			&::after {
 				display: block;
