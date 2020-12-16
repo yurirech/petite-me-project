@@ -1,7 +1,7 @@
 import {useSelector} from 'react-redux';
-
+// import { changeTheme } from '../../reducers/admin-panel';
 const ThemeProvider = ({ children }) => {
-  const theme = useSelector(state => {
+  const theme = useSelector((state: any) => {
     return state.changeTheme.theme;
   })
 
