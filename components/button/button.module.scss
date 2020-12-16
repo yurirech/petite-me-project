@@ -2,7 +2,7 @@
 @import '../../styles/variables';
 
 .button {
-  background-color: var(--color-petite-beige);
+  background-color: var(--color-petite-brand);
   color: #ffffff;
   letter-spacing: .12rem;
   border-radius: .4rem;
@@ -23,11 +23,11 @@
 }
 
 .button.light {
-  background-color: var(--color-petite-light-beige);
+  background-color: var(--color-petite-brand-light);
 }
 
 .button.dark {
-  background-color: var(--color-petite-dark-beige);
+  background-color: var(--color-petite-brand-dark);
 }
 
 .button.black {

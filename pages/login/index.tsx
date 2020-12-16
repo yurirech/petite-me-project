@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/dist/client/router";
+
 import Link from "next/link";
 import Image from "next/image";
 import cx from "classnames";
@@ -8,10 +10,11 @@ import uStyles from "../../styles/utils.module.scss";
 
 import Input from "../../components/input/input";
 import Button from "../../components/button/button";
-import { useRouter } from "next/dist/client/router";
+
 
 const Login = () => {
 	const router = useRouter();
+	
 	const [isLogin, setIsLogin] = useState(true);
 	const [isRegistered, setIsRegistered] = useState(false);
 
@@ -36,7 +39,6 @@ const Login = () => {
 		<>
 			<div className={styles.login}>
 				<span className={styles.divider}></span>
-
 				<div className={uStyles.container}>
 					<div className={styles.flexContainer}>
 						<div className={styles.leftBlock}>
