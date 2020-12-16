@@ -5,8 +5,6 @@ const ThemeProvider = ({ children }) => {
     return state.changeTheme.theme;
   })
 
-  console.log(theme);
-  
   return <div className={`${theme}-theme`}>{children}</div>;
 };
 
