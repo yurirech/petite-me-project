@@ -9,22 +9,31 @@
   --color-petite-background: #f5f7fa;
 
 	.autumn-theme {
-		--color-petite-dark-beige: #b66e60;
-		--color-petite-beige: #d17e6e;
-		--color-petite-light-beige: #e3a992;
-		--color-petite-light-green: #dcd9d2;
-	}
+		--color-petite-brand-dark: #b66e60;
+		--color-petite-brand: #d17e6e;
+		--color-petite-brand-light: #e3a992;
+		--color-petite-secondary-light: #dcd9d2;
+  }
+  
 	.summer-theme {
-    --color-petite-dark-beige: #5182f6;
-		--color-petite-beige: #312a50;
-		--color-petite-light-beige: #a0c0b6;
-		--color-petite-light-green: #e0a20f;
+    --color-petite-brand-dark: #023047;
+		--color-petite-brand: #219ebc;
+		--color-petite-brand-light: #8ecae6;
+		--color-petite-secondary-light: #d4d4d4;
   }
 
 	.winter-theme {
+    --color-petite-brand-dark: #2b2d42;
+		--color-petite-brand: #8d99ae;
+		--color-petite-brand-light: #a8b7d1;
+		--color-petite-secondary-light: #c6d0e2;
 	}
 
 	.spring-theme {
+    --color-petite-brand-dark: #8b2459;
+		--color-petite-brand: #E12C8B;
+		--color-petite-brand-light:#e67ab2;
+		--color-petite-secondary-light: #E4C1BB;
 	}
 }
 
