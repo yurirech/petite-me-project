@@ -75,22 +75,22 @@ const MenuBar = () => {
 					{toggleMenu ? <div className={`${styles.buttonToggle}`}></div> : null}
 				</menu>
 				<section className={styles.menuLinks}>
-					<Link href="/">
+					<Link  href="/collection/new-arrivals">
 						<a>New items</a>
 					</Link>
-					<Link href="/">
+					<Link href="/collection/tops">
 						<a>Tops</a>
 					</Link>
-					<Link href="/">
+					<Link href="/collection/trousers">
 						<a>Trousers</a>
 					</Link>
-					<Link href="/">
+					<Link href="/collection/underwear">
 						<a>Underwear</a>
 					</Link>
-					<Link href="/">
+					<Link href="/collection/scarves">
 						<a>Scarves</a>
 					</Link>
-					<Link href="/">
+					<Link href="/collection/dresses">
 						<a>Dresses</a>
 					</Link>
 				</section>
