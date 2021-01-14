@@ -1,21 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
 import Button from "../components/button/button";
-import Footer from "../components/footer/footer";
-import MenuBar from "../components/menu-bar/menu-bar";
 import Instagram from "../public/icon/instagram-negative.svg";
 import styles from "../styles/home.module.scss";
 import uStyles from "../styles/utils.module.scss";
 
 export default function Home() {
+
 	return (
 		<div>
 			<Head>
 				<title>Petite Me</title>
 				{/* <link rel="icon" href="/favicon.ico" /> TODO: CREATE ICO */}
 			</Head>
-
+				
 			<main>
+
 				<section
 					className={`${styles.infoDisplay} ${styles.infoDisplayDesktop}`}
 				>

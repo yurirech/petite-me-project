@@ -7,6 +7,9 @@ import DropdownIcon from "../../public/icon/arrow_drop_down_24px.svg";
 import CollectionItem from "../../components/collection-item/collection-item";
 import { useEffect, useState } from "react";
 import DropdownMenu from "../../components/dropdown-menu/dropdown-menu";
+import {newArrivalsss} from '../../dummydata';
+// import {getCategoriesData} from '../../lib/collections';
+import { db } from '../../firebase/utils';
 
 const Collection = () => {
 	const router: any = useRouter();
