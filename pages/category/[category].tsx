@@ -7,7 +7,7 @@ import DropdownIcon from "../../public/icon/arrow_drop_down_24px.svg";
 import CollectionItem from "../../components/collection-item/collection-item";
 import { useEffect, useState } from "react";
 import DropdownMenu from "../../components/dropdown-menu/dropdown-menu";
-import {getAllCollectionsIds, getCategoryData, mergeAllItems, getCategoriesData} from '../../lib/categories';
+import {getAllCollectionsIds, getCategoryData} from '../../lib/categories';
 
 const Category = ({categoryData}) => {
 	const [title, setTitle] = useState(categoryData.category);
