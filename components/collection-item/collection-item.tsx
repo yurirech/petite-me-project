@@ -8,6 +8,7 @@ interface CollectionItem {
 	price: string;
 	numberOfColors: number;
 	inStock: number;
+	isNew: boolean;
 }
 
 const CollectionItem = ({
@@ -16,6 +17,7 @@ const CollectionItem = ({
 	price,
 	numberOfColors,
 	inStock,
+	isNew
 }: CollectionItem) => {
 	return (
 		<>

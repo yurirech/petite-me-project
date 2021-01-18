@@ -1,12 +1,11 @@
-export const newArrivalsss = {
-  items: [
+export const newArrivalsss = { items: [
     {
      title: 'Sit amet doll rag.',
-     price: 21.99,
+     price: 20.99,
      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus debitis inventore laudantium explicabo, minima sint? Vero illo voluptate ipsam sed.',
      furtherInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, pariatur.',
-     category: ['dresses'],
-     colors: ['blue', 'orange', 'pink'],
+     category: ['trousers'],
+     colors: ['black', 'orange', 'pink'],
      stock: {
        xsmall: 5,
        small: 5,
@@ -21,11 +20,11 @@ export const newArrivalsss = {
     },
     {
      title: 'Sit amet doll rag.',
-     price: 61.99,
+     price: 60.99,
      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus debitis inventore laudantium explicabo, minima sint? Vero illo voluptate ipsam sed.',
      furtherInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, pariatur.',
-     category: ['dresses'],
-     colors: ['blue', 'orange', 'pink'],
+     category: ['trousers'],
+     colors: ['black', 'orange', 'pink'],
      stock: {
        xsmall: 5,
        small: 5,
@@ -40,11 +39,11 @@ export const newArrivalsss = {
     },
     {
      title: 'Sit amet doll rag.',
-     price: 71.99,
+     price: 70.99,
      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus debitis inventore laudantium explicabo, minima sint? Vero illo voluptate ipsam sed.',
      furtherInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, pariatur.',
-     category: ['dresses'],
-     colors: ['blue', 'orange', 'pink'],
+     category: ['trousers'],
+     colors: ['black', 'orange', 'pink'],
      stock: {
        xsmall: 5,
        small: 5,
@@ -59,11 +58,11 @@ export const newArrivalsss = {
     },
     {
      title: 'Sit amet doll rag.',
-     price: 21.99,
+     price: 29.99,
      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus debitis inventore laudantium explicabo, minima sint? Vero illo voluptate ipsam sed.',
      furtherInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, pariatur.',
-     category: ['dresses'],
-     colors: ['blue', 'orange', 'pink'],
+     category: ['underwear'],
+     colors: ['red', 'orange', 'pink'],
      stock: {
        xsmall: 5,
        small: 5,
