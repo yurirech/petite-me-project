@@ -1,0 +1,49 @@
+@import "../../../styles/_mixins.scss";
+
+.collection {
+	header {
+		margin-top: 1.75rem;
+
+		h2 {
+			text-transform: capitalize;
+		}
+
+		.filters {
+			font-weight: 600;
+			@include moreLetterSpacing;
+
+			small:last-of-type {
+				margin-left: 2.5rem;
+			}
+		}
+	}
+
+	.collectionItems {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+}
+
+@include laptopS {
+	.collection {
+		header {
+			margin-top: 5rem;
+
+			.filters {
+				margin-top: 1.5rem;
+			}
+
+			small {
+				cursor: pointer;
+			}
+		}
+
+		.collectionItems {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-gap: 20px;
+		}
+	}
+}

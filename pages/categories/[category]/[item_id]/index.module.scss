@@ -1,0 +1,53 @@
+@import "../../../../styles/_mixins.scss";
+
+.main {
+	.swiper {
+    margin-top: 2.5rem;
+		.swiperImgHolder {
+			position: relative;
+			// width: 100%;
+			max-width: 50rem;
+		}
+	}
+
+	.colors {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.15rem;
+
+		span {
+			background-color: yellowgreen;
+			width: 2.75rem;
+			height: 2.75rem;
+      display: block;
+      margin: 1rem;
+      
+
+      &.selected {
+        border: 3px solid var(--color-petite-grey);
+      }
+		}
+  }
+  
+  .info {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    
+
+    p {
+      text-transform: capitalize;
+      font-size: 2.5rem;
+      display: inline-block;
+      @include moreLetterSpacing;
+    }
+
+    small {
+      margin-left: auto;
+    }
+
+    a {
+      display: block;
+    }
+  }
+}
