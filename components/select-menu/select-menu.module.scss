@@ -1,0 +1,15 @@
+@import "../../styles/_mixins.scss";
+
+.select {
+  width: 100%;
+  border: none;
+  border-bottom: 2px var(--color-petite-black) solid;
+  background-color: transparent;
+  min-height: 3.25rem;
+  transition: .6s;
+  outline: none;
+  margin: 1rem 0;
+
+  font-size: 1.6rem;
+  @include moreLetterSpacing;  
+}

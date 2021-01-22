@@ -2,7 +2,7 @@
 
 .main {
 	.swiper {
-    margin-top: 2.5rem;
+		margin-top: 2.5rem;
 		.swiperImgHolder {
 			position: relative;
 			// width: 100%;
@@ -11,43 +11,92 @@
 	}
 
 	.colors {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.15rem;
+		display: flex;
+		justify-content: center;
+		margin-top: 1.15rem;
 
 		span {
-			background-color: yellowgreen;
 			width: 2.75rem;
 			height: 2.75rem;
-      display: block;
-      margin: 1rem;
-      
+			display: block;
+			margin: 1rem;
 
-      &.selected {
-        border: 3px solid var(--color-petite-grey);
-      }
+			&.selected {
+				border: 3px solid var(--color-petite-grey);
+			}
 		}
-  }
-  
-  .info {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
+	}
+
+	.info {
+		margin-top: 2.5rem;
+
+		.title {
+			display: flex;
+			align-items: baseline;
+
+			p {
+				text-transform: capitalize;
+				font-size: 2.5rem;
+				margin: 1.5rem 0;
+				@include moreLetterSpacing;
+			}
+
+			small {
+				margin-left: auto;
+			}
+		}
+
+		a {
+			font-size: 1.35rem;
+			font-weight: 500;
+			margin-bottom: 1.25rem;
+			display: block;
+		}
+
+		form {
+			.layoutContainer {
+				margin-bottom: 4rem;
+				display: flex;
+				flex-wrap: wrap;
+				// justify-content: center;
+				align-items: center;
+
+				.numberOfItems {
+					margin: 2rem 0;
+					display: inline-block;
+				}
+
+				.wishlist {
+					margin-left: auto;
+					button {
+            display: flex;
+						padding: 0.5rem;
+					}
+				}
+			}
+    }
     
+    .description {
+      margin-top: 4rem;
 
-    p {
-      text-transform: capitalize;
-      font-size: 2.5rem;
-      display: inline-block;
-      @include moreLetterSpacing;
+      p {
+        @include lineHeightP;
+      }
     }
 
-    small {
-      margin-left: auto;
-    }
+    .furtherInfo {
+      margin: 3rem 0;
 
-    a {
-      display: block;
+      p {
+        @include moreLetterSpacing;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+
+      small {
+        font-size: 75%;
+        @include moreLetterSpacing;
+      }
     }
-  }
+	}
 }
