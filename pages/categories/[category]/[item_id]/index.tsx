@@ -15,7 +15,7 @@ import SelectMenu from "../../../../components/select-menu/select-menu";
 import ItemsCounter from "../../../../components/items-counter/items-counter";
 import Button from "../../../../components/button/button";
 import Favorite from "../../../../public/icon/favorite-border.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // export async function getStaticProps({params, items}) {
 //   try {
@@ -38,33 +38,34 @@ const photos = [
 	"/img/instapic.jpg",
 ];
 
-const photosT = [
-	{
-		color: "#AFC9D2",
-		photos: [
-			"/img/clothing-2.jpg",
-			"/img/clothing-2.jpg",
-			"/img/clothing-2.jpg",
-			
-		],
-	},
-	{
-		color: "#D17E6E",
-		photos: [
-			"/img/who-are-we1.jpg",
-			"/img/who-are-we1.jpg",
-			"/img/who-are-we1.jpg",
-		],
-	},
-	{
-		color: "#39BAE6",
-		photos: ["/img/model-1.jpg", "/img/model-1.jpg", "/img/model-1.jpg"],
-	},
-];
+// const photosT = [
+// 	{
+// 		color: "#AFC9D2",
+// 		photos: [
+// 			"/img/clothing-2.jpg",
+// 			"/img/clothing-2.jpg",
+// 			"/img/clothing-2.jpg",
+
+// 		],
+// 	},
+// 	{
+// 		color: "#D17E6E",
+// 		photos: [
+// 			"/img/who-are-we1.jpg",
+// 			"/img/who-are-we1.jpg",
+// 			"/img/who-are-we1.jpg",
+// 		],
+// 	},
+// 	{
+// 		color: "#39BAE6",
+// 		photos: ["/img/model-1.jpg", "/img/model-1.jpg", "/img/model-1.jpg"],
+// 	},
+// ];
 
 const Item = () => {
 	const router = useRouter();
 	const [selectColor, setSelectColor] = useState(colors[0]);
+	// const [photoss, setPhotoss] = useState();
 
 	return (
 		<>
@@ -72,9 +73,10 @@ const Item = () => {
 				<title>Clothing Item</title>
 			</Head>
 			<main className={styles.main}>
-				<div className={uStyles.container}>
-					<section className={styles.swiper}>
+				<div className={`${uStyles.container} ${styles.flex}`}>
+					<section className={styles.itemsPhotos}>
 						<Swiper
+							className={styles.swiper}
 							slidesPerView={1}
 							onSlideChange={() => console.log("slide change")}
 							onSwiper={(swiper) => console.log(swiper)}
@@ -96,8 +98,24 @@ const Item = () => {
 								);
 							})}
 						</Swiper>
+						<div className={styles.photosGridDesktop}>
+							{photos.map((photo) => {
+								return (
+									<div className={styles.gridImgHolder}>
+										<Image
+											key={photo}
+											src={photo}
+											layout="responsive"
+											height="200"
+											width="150"
+											objectFit="cover"
+										/>
+									</div>
+								);
+							})}
+						</div>
 					</section>
-					<section className={styles.colors}>
+					<section className={`${styles.colors} ${styles.colorsMobile}`}>
 						{colors.map((color) => (
 							<span
 								key={color}
@@ -114,6 +132,16 @@ const Item = () => {
 								<strong>€89.90</strong>
 							</small>
 						</div>
+						<section className={`${styles.colors} ${styles.colorsDesktop}`}>
+						{colors.map((color) => (
+							<span
+								key={color}
+								style={{ backgroundColor: color }}
+								className={color === selectColor ? styles.selected : null}
+								onClick={() => setSelectColor(color)}
+							></span>
+						))}
+					</section>
 						<Link href="/">
 							<a>Help with sizes</a>
 						</Link>
@@ -134,7 +162,9 @@ const Item = () => {
 							</div>
 							<Button title="Add to shopping bag" />
 						</form>
-						<section className={styles.description}>
+						
+					</section>
+					<section className={styles.description}>
 							<h3>Description</h3>
 							<p>
 								Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -148,7 +178,6 @@ const Item = () => {
 								Lorem ipsum dolor sit, amet consectetur adipisicing.
 							</small>
 						</section>
-					</section>
 				</div>
 			</main>
 		</>
