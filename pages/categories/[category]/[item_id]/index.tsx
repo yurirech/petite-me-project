@@ -17,42 +17,7 @@ import Button from "../../../../components/button/button";
 import Favorite from "../../../../public/icon/favorite-border.svg";
 import { useEffect, useState } from "react";
 
-// export async function getStaticProps({params, items}) {
-//   try {
-// 		const categoryData = await getCategoryData(params.category, items)
-//     return {
-//       props: {
-//         categoryData
-//       }
-//   }
-//   } catch (err) {
-//     console.log(err)
-//   }
-// }
-
-const colors = ["#AFC9D2", "#D17E6E", "#39BAE6"];
 const photos = [
-	"/img/clothing-2.jpg",
-	"/img/who-are-we1.jpg",
-	"/img/model-1.jpg",
-	"/img/instapic.jpg",
-];
-
-const test = {
-	"#AFC9D2": [
-		"/img/clothing-2.jpg",
-		"/img/clothing-2.jpg",
-		"/img/clothing-2.jpg",
-	],
-	"#D17E6E": [
-		"/img/who-are-we1.jpg",
-		"/img/who-are-we1.jpg",
-		"/img/who-are-we1.jpg",
-	],
-	"#4de639": ["/img/model-1.jpg", "/img/model-1.jpg", "/img/model-1.jpg"],
-};
-
-const photosT = [
 	{
 		color: "#AFC9D2",
 		photos: [
@@ -75,24 +40,16 @@ const photosT = [
 	},
 ];
 
-// const a = () => {
-// 	const currentColor = "#4de639";
-// 	let ui = [];
-// 	const colors = photosT.map((data) => {
-// 		if (currentColor === data.color) {
-// 			ui = data.photos;
-// 		}
-// 		return ui;
-// 	});
-// 	console.log(colors);
-// };
-
-// a();
-
 const Item = () => {
 	const router = useRouter();
-	const [selectColor, setSelectColor] = useState(colors[0]);
-	// const [photoss, setPhotoss] = useState();
+	const [selectColor, setSelectColor] = useState(photos[0].color);
+	const [currentPhotos, setCurrentPhotos] = useState(photos[0].photos);
+
+	//This function will be triggered when clicked on  the color and it will get the set of photos of tha specific color
+	const getItemPhotos = (currentColor: string) => {
+		const selectedPhotos = photos.filter((data) => data.color === currentColor);
+		setCurrentPhotos(selectedPhotos[0].photos);
+	};
 
 	return (
 		<>
@@ -102,18 +59,12 @@ const Item = () => {
 			<main className={styles.main}>
 				<div className={`${uStyles.container} ${styles.flex}`}>
 					<section className={styles.itemsPhotos}>
-						<Swiper
-							className={styles.swiper}
-							slidesPerView={1}
-							onSlideChange={() => console.log("slide change")}
-							onSwiper={(swiper) => console.log(swiper)}
-						>
-							{photos.map((photo) => {
+						<Swiper className={styles.swiper} slidesPerView={1}>
+							{currentPhotos.map((photo, i) => {
 								return (
-									<SwiperSlide>
+									<SwiperSlide key={i}>
 										<div className={styles.swiperImgHolder}>
 											<Image
-												key={photo}
 												src={photo}
 												layout="responsive"
 												height="200"
@@ -126,11 +77,11 @@ const Item = () => {
 							})}
 						</Swiper>
 						<div className={styles.photosGridDesktop}>
-							{photos.map((photo) => {
+							{currentPhotos.map((photo, i) => {
 								return (
-									<div className={styles.gridImgHolder}>
+									<div key={i} className={styles.gridImgHolder}>
+										{/* TODO: Change key to photo id */}
 										<Image
-											key={photo}
 											src={photo}
 											layout="responsive"
 											height="200"
@@ -143,14 +94,14 @@ const Item = () => {
 						</div>
 					</section>
 					<section className={`${styles.colors} ${styles.colorsMobile}`}>
-						{photosT.map((color) => (
+						{photos.map(({ color }) => (
 							<span
-								key={color.color}
-								style={{ backgroundColor: color.color }}
-								className={color.color === selectColor ? styles.selected : null}
+								key={color}
+								style={{ backgroundColor: color }}
+								className={color === selectColor ? styles.selected : null}
 								onClick={() => {
-									console.log(color.color);
-									return setSelectColor(color.color);
+									setSelectColor(color);
+									getItemPhotos(color);
 								}}
 							></span>
 						))}
@@ -164,12 +115,15 @@ const Item = () => {
 						</div>
 						<div className={styles.colorsDesktop}>
 							<section className={`${styles.colors}`}>
-								{colors.map((color) => (
+								{photos.map(({ color }) => (
 									<span
 										key={color}
 										style={{ backgroundColor: color }}
 										className={color === selectColor ? styles.selected : null}
-										onClick={() => setSelectColor(color)}
+										onClick={() => {
+											setSelectColor(color);
+											getItemPhotos(color);
+										}}
 									></span>
 								))}
 							</section>
