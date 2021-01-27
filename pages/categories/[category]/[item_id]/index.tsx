@@ -38,29 +38,56 @@ const photos = [
 	"/img/instapic.jpg",
 ];
 
-// const photosT = [
-// 	{
-// 		color: "#AFC9D2",
-// 		photos: [
-// 			"/img/clothing-2.jpg",
-// 			"/img/clothing-2.jpg",
-// 			"/img/clothing-2.jpg",
+const test = {
+	"#AFC9D2": [
+		"/img/clothing-2.jpg",
+		"/img/clothing-2.jpg",
+		"/img/clothing-2.jpg",
+	],
+	"#D17E6E": [
+		"/img/who-are-we1.jpg",
+		"/img/who-are-we1.jpg",
+		"/img/who-are-we1.jpg",
+	],
+	"#4de639": ["/img/model-1.jpg", "/img/model-1.jpg", "/img/model-1.jpg"],
+};
 
-// 		],
-// 	},
-// 	{
-// 		color: "#D17E6E",
-// 		photos: [
-// 			"/img/who-are-we1.jpg",
-// 			"/img/who-are-we1.jpg",
-// 			"/img/who-are-we1.jpg",
-// 		],
-// 	},
-// 	{
-// 		color: "#39BAE6",
-// 		photos: ["/img/model-1.jpg", "/img/model-1.jpg", "/img/model-1.jpg"],
-// 	},
-// ];
+const photosT = [
+	{
+		color: "#AFC9D2",
+		photos: [
+			"/img/clothing-2.jpg",
+			"/img/clothing-2.jpg",
+			"/img/clothing-2.jpg",
+		],
+	},
+	{
+		color: "#D17E6E",
+		photos: [
+			"/img/who-are-we1.jpg",
+			"/img/who-are-we1.jpg",
+			"/img/who-are-we1.jpg",
+		],
+	},
+	{
+		color: "#4de639",
+		photos: ["/img/model-1.jpg", "/img/model-1.jpg", "/img/model-1.jpg"],
+	},
+];
+
+// const a = () => {
+// 	const currentColor = "#4de639";
+// 	let ui = [];
+// 	const colors = photosT.map((data) => {
+// 		if (currentColor === data.color) {
+// 			ui = data.photos;
+// 		}
+// 		return ui;
+// 	});
+// 	console.log(colors);
+// };
+
+// a();
 
 const Item = () => {
 	const router = useRouter();
@@ -116,12 +143,15 @@ const Item = () => {
 						</div>
 					</section>
 					<section className={`${styles.colors} ${styles.colorsMobile}`}>
-						{colors.map((color) => (
+						{photosT.map((color) => (
 							<span
-								key={color}
-								style={{ backgroundColor: color }}
-								className={color === selectColor ? styles.selected : null}
-								onClick={() => setSelectColor(color)}
+								key={color.color}
+								style={{ backgroundColor: color.color }}
+								className={color.color === selectColor ? styles.selected : null}
+								onClick={() => {
+									console.log(color.color);
+									return setSelectColor(color.color);
+								}}
 							></span>
 						))}
 					</section>
@@ -132,16 +162,18 @@ const Item = () => {
 								<strong>€89.90</strong>
 							</small>
 						</div>
-						<section className={`${styles.colors} ${styles.colorsDesktop}`}>
-						{colors.map((color) => (
-							<span
-								key={color}
-								style={{ backgroundColor: color }}
-								className={color === selectColor ? styles.selected : null}
-								onClick={() => setSelectColor(color)}
-							></span>
-						))}
-					</section>
+						<div className={styles.colorsDesktop}>
+							<section className={`${styles.colors}`}>
+								{colors.map((color) => (
+									<span
+										key={color}
+										style={{ backgroundColor: color }}
+										className={color === selectColor ? styles.selected : null}
+										onClick={() => setSelectColor(color)}
+									></span>
+								))}
+							</section>
+						</div>
 						<Link href="/">
 							<a>Help with sizes</a>
 						</Link>
@@ -162,22 +194,19 @@ const Item = () => {
 							</div>
 							<Button title="Add to shopping bag" />
 						</form>
-						
 					</section>
 					<section className={styles.description}>
-							<h3>Description</h3>
-							<p>
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-								Accusamus ullam ipsum ratione quasi doloremque corporis
-								explicabo a ut nobis quibusdam!
-							</p>
-						</section>
-						<section className={styles.furtherInfo}>
-							<p>FURTHER INFO</p>
-							<small>
-								Lorem ipsum dolor sit, amet consectetur adipisicing.
-							</small>
-						</section>
+						<h3>Description</h3>
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+							Accusamus ullam ipsum ratione quasi doloremque corporis explicabo
+							a ut nobis quibusdam!
+						</p>
+					</section>
+					<section className={styles.furtherInfo}>
+						<p>FURTHER INFO</p>
+						<small>Lorem ipsum dolor sit, amet consectetur adipisicing.</small>
+					</section>
 				</div>
 			</main>
 		</>
