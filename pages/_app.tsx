@@ -1,11 +1,13 @@
 import { AppProps } from "next/app";
-import { useState } from "react";
+
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 import { changeTheme } from "../reducers/admin-panel";
+
 import "../styles/globals.scss";
+import 'swiper/swiper.scss';
 
 import MenuBar from "../components/menu-bar/menu-bar";
 import Footer from "../components/footer/footer";

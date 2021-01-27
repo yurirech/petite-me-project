@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "./collection-item.module.scss";
 
@@ -9,6 +10,7 @@ interface CollectionItem {
 	numberOfColors: number;
 	inStock: number;
 	isNew: boolean;
+	link?: string;
 }
 
 const CollectionItem = ({
@@ -17,7 +19,8 @@ const CollectionItem = ({
 	price,
 	numberOfColors,
 	inStock,
-	isNew
+	isNew,
+	link,
 }: CollectionItem) => {
 	return (
 		<>
@@ -39,15 +42,17 @@ const CollectionItem = ({
 							<label>XL</label>
 						</div>
 					</div>
-					<div className={styles.itemPhotoHolder}>
-						<Image
-							src={image}
-							objectFit="cover"
-							width={327}
-							height={489}
-							layout="responsive"
-						/>
-					</div>
+					<Link href={link}>
+						<div className={styles.itemPhotoHolder}>
+							<Image
+								src={image}
+								objectFit="cover"
+								width={327}
+								height={489}
+								layout="responsive"
+							/>
+						</div>
+					</Link>
 				</div>
 
 				<label>{title}</label>
